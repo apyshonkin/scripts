@@ -15,7 +15,7 @@ function backup {
         for REPO in $REPOLIST; do
                 mkdir -p $BACKUP_DIR/$TSTAMP
                 echo "Backing up & compressing ${GITHUB_ORG}/${REPO}"
-                ${GITHUB_CLONE_CMD}${GITHUB_ORG}/${REPO}.git ${BACKUP_DIR}/$TSTAMP/${REPO} && tar czpPf ${BACKUP_DIR}/$TSTAMP/$REPO.tar.gz ${BACKUP_DIR}/$TSTAMP/-${REPO} --remove-files
+                ${GITHUB_CLONE_CMD}${GITHUB_ORG}/${REPO}.git ${BACKUP_DIR}/$TSTAMP/${REPO} && tar czpPf ${BACKUP_DIR}/$TSTAMP/$REPO.tar.gz ${BACKUP_DIR}/$TSTAMP/${REPO} --remove-files
         done
 }
 
